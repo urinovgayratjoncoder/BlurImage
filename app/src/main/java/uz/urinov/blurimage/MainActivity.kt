@@ -1,6 +1,7 @@
 package uz.urinov.blurimage
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import coil.load
@@ -19,14 +20,24 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.go.setOnClickListener {
+            Toast.makeText(this, "salom", Toast.LENGTH_SHORT).show()
             viewModel.applyBlur(5)
         }
 
         val intent = intent
 
+
+
+
         val imageUriExtra = intent.getStringExtra(Constants.KEY_IMAGE_URI)
 
+
+
+
         viewModel.setImageUri(imageUriExtra!!)
+
+
+
 
         binding.image.load(imageUriExtra)
 
